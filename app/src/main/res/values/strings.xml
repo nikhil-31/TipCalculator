@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TipCalculator</string>
+    <string name="check">Check</string>
+    <string name="tip_amount">Tip Amount</string>
+    <string name="grand_total">Grand Total</string>
+    <string name="hint_tip_percentage">Tip Percentage</string>
+    <string name="hint_check">Check</string>
+
+    <string name="dollar">$%1$.02f</string>
+</resources>
