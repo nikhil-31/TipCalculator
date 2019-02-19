@@ -7,7 +7,7 @@ import com.example.tipcalculator.R
 import com.example.tipcalculator.model.Calculator
 import com.example.tipcalculator.model.TipCalculator
 
-class CalculatorViewModel(val app: Application, val calculator: Calculator = Calculator()) : BaseObservable() {
+class CalculatorViewModel @JvmOverloads constructor(app: Application, val calculator: Calculator = Calculator()) : ObservableViewModel(app) {
 
     // Inputs
     var inputCheckAmount = ""
@@ -25,9 +25,9 @@ class CalculatorViewModel(val app: Application, val calculator: Calculator = Cal
     private fun updateOutputs(tc: TipCalculator) {
 //        Log.d(" Update outputs " , "${tc.checkAmount} ${tc.tipAmount} ${tc.tipPct} ${tc.grandTotal}")
 
-        outputCheckAmount = app.getString(R.string.dollar, tc.checkAmount)
-        outputTipAmount = app.getString(R.string.dollar,tc.tipAmount)
-        outputGrandTotal = app.getString(R.string.dollar,tc.grandTotal)
+        outputCheckAmount = getApplication<Application>().getString(R.string.dollar, tc.checkAmount)
+        outputTipAmount = getApplication<Application>().getString(R.string.dollar,tc.tipAmount)
+        outputGrandTotal = getApplication<Application>().getString(R.string.dollar,tc.grandTotal)
     }
 
     fun calculateTip() {
